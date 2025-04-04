@@ -162,13 +162,13 @@ const FAQ = ({ question, answer }: { question: string; answer: string }) => {
 const testimonials = [
   {
     text: "Gostaria de expressar meu sincero agradecimento pelo excelente atendimento que recebi durante minha consulta. Sua atenção, profissionalismo e cuidado fizeram toda a diferença na minha experiência. Fiquei muito satisfeita com o tratamento e a forma como vocês explicaram cada etapa do processo. É reconfortante saber que estou em boas mãos.",
-    author: "Thaís",
+    author: "Thaís Matos",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80",
   },
   {
     text: "Bom dia! Dormi super bem, perdi até a novela, rsrs! Geralmente durmo meia-noite, mas ontem deitei às 21h e acordei me sentindo ótima. Tomei o remédio que a Dra. Maria do Carmo me passou e a dor que estava começando a aparecer, sumiu. Dra. Maria do Carmo, agradeço imensamente a Deus por ter colocado em meu caminho uma profissional tão carinhosa e competente como a senhora!",
-    author: "Maria do Carmo",
+    author: "Adélio Nunes",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80",
   },
@@ -273,7 +273,7 @@ function App() {
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80"
+            src="https://i.postimg.cc/151wVQKs/Whats-App-Image-2025-03-12-at-14-47-22.jpg"
             alt="Consultório Odontológico"
             className="w-full h-full object-cover opacity-20"
           />
@@ -322,7 +322,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <Statistic number="15+" label="Anos de Experiência" />
+            <Statistic number="30+" label="Anos de Experiência" />
             <Statistic number="10k+" label="Pacientes Atendidos" />
             <Statistic number="98%" label="Satisfação" />
           </motion.div>
@@ -344,17 +344,17 @@ function App() {
               Nossa Clínica Atende Quem
             </h2>
             <p className="text-gray-600 text-lg">
-              Conheça os problemas que resolvemos com excelência e dedicação
+            Conheça os casos que solucionamos com excelência e dedicação
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               {[
-                "Quer um sorriso bonito e confiante",
+                "Deseja um sorriso bonito e confiante.",
                 "Busca atendimento humanizado e sem dor",
-                "Precisa resolver dentes tortos, cáries ou perdas dentárias",
-                "Deseja procedimentos modernos e minimamente invasivos",
+                "Necessita de tratamento ortodôntico, restaurador e reabilitador",
+                "Não abre mão de procedimentos e profissionais modernos e minimamente invasivos",
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -378,7 +378,7 @@ function App() {
               viewport={{ once: true }}
             >
               <img
-                src="https://i.postimg.cc/90S2dx50/Whats-App-Image-2025-02-27-at-13-57-38.jpg"
+                src="https://i.postimg.cc/jSqpk3Gp/fnda.jpg"
                 alt="Atendimento Odontológico"
                 className="w-full h-auto object-cover"
               />
@@ -400,8 +400,7 @@ function App() {
               Nossos Procedimentos
             </h2>
             <p className="text-gray-600 text-lg">
-              Oferecemos uma ampla gama de tratamentos odontológicos para cuidar
-              do seu sorriso
+            Disponibilizamos uma seleção exclusiva de tratamentos odontológicos para realçar a saúde e a beleza seu sorriso
             </p>
           </motion.div>
 
@@ -646,28 +645,28 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <FAQ
-                question="Os tratamentos são dolorosos?"
-                answer="Não! Utilizamos técnicas modernas e minimamente invasivas, além de anestesia adequada quando necessário, garantindo seu conforto durante todo o procedimento."
-              />
-              <FAQ
                 question="Como marcar uma consulta?"
                 answer="É simples! Basta clicar no botão de agendamento ou nos contatar via WhatsApp. Nossa equipe está pronta para atendê-lo e agendar sua avaliação gratuita."
+              />          
+              <FAQ
+                question="Onde estamos localizados?"
+                answer="Estamos estrategicamente localizados no Shopping Mestre Álvaro: Av. João Palácio, 300, Centro Empresarial, Torre B – Salas 605/606, Serra – ES. Um ambiente sofisticado e de fácil acesso."
               />
               <FAQ
                 question="A clínica atende crianças?"
                 answer="Sim! Temos uma equipe especializada em odontopediatria, preparada para atender crianças de todas as idades em um ambiente acolhedor e divertido."
-              />
+              />              
               <FAQ
-                question="Onde estamos localizados?"
-                answer="Estamos estrategicamente loc alizados no Shopping Mestre Álvaro: Av. João Palácio, 300 – Salas 605/606, Serra – ES. Um ambiente sofisticado e de fácil acesso."
+                question="Quanto tempo dura uma consulta inicial?"
+                answer="Nossa consulta de avaliação dura aproximadamente 40 minutos, tempo suficiente para conhecermos suas necessidades, realizar um exame completo e elaborar um plano de tratamento personalizado."
               />
               <FAQ
                 question="Quanto tempo dura o clareamento dental?"
                 answer="O resultado do clareamento dental pode durar de 1 a 3 anos, dependendo dos seus hábitos alimentares, higiene bucal e cuidados pós-tratamento. Oferecemos orientações personalizadas para prolongar os resultados."
               />
               <FAQ
-                question="Quanto tempo dura uma consulta inicial?"
-                answer="Nossa consulta de avaliação dura aproximadamente 40 minutos, tempo suficiente para conhecermos suas necessidades, realizar um exame completo e elaborar um plano de tratamento personalizado."
+                question="Os tratamentos são dolorosos?"
+                answer="Não! Utilizamos técnicas modernas e minimamente invasivas, além de anestesia adequada quando necessário, garantindo seu conforto durante todo o procedimento."
               />
             </div>
 
@@ -694,7 +693,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <img
-                src="https://i.postimg.cc/brqpYG0Y/13e77136-b198-473f-a0f5-5a10fc9ffdc4.png"
+                src="https://i.postimg.cc/d1H7grT9/Logo-Prancheta-1.png"
                 alt="Excelence Odontologia Integrada"
                 className="h-16 mb-4"
               />
@@ -711,7 +710,7 @@ function App() {
                 <br />
                 Centro Empresarial do Shopping Mestre Álvaro
                 <br />
-                Salas 605 e 606
+                Torre B, Salas 605 e 606
                 <br />
                 Eurico Salles | Serra | ES
                 <br />
