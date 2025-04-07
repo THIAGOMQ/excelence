@@ -273,9 +273,9 @@ function App() {
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://i.postimg.cc/151wVQKs/Whats-App-Image-2025-03-12-at-14-47-22.jpg"
+            src="https://img.freepik.com/free-photo/female-patient-having-procedure-done-dentist_23-2148985796.jpg?t=st=1744046435~exp=1744050035~hmac=62e846426e3d8cf44c8d003e9b2cc51e192c9c6f24c4ecf052593ed34c8328a6&w=996"
             alt="Consultório Odontológico"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-50"
           />
         </div>
 
@@ -292,7 +292,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src="https://i.postimg.cc/brqpYG0Y/13e77136-b198-473f-a0f5-5a10fc9ffdc4.png"
+              src="https://i.postimg.cc/50ZZj3m5/Log2.png"
               alt="Excelence Odontologia Integrada"
               className="w-full max-w-[400px] md:max-w-[600px] lg:max-w-[800px] h-auto mx-auto mb-8 filter brightness-105"
               style={{ filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15))" }}
@@ -344,7 +344,7 @@ function App() {
               Nossa Clínica Atende Quem
             </h2>
             <p className="text-gray-600 text-lg">
-            Conheça os casos que solucionamos com excelência e dedicação
+              Conheça os casos que solucionamos com excelência e dedicação
             </p>
           </motion.div>
 
@@ -400,7 +400,8 @@ function App() {
               Nossos Procedimentos
             </h2>
             <p className="text-gray-600 text-lg">
-            Disponibilizamos uma seleção exclusiva de tratamentos odontológicos para realçar a saúde e a beleza seu sorriso
+              Disponibilizamos uma seleção exclusiva de tratamentos
+              odontológicos para realçar a saúde e a beleza seu sorriso
             </p>
           </motion.div>
 
@@ -647,7 +648,7 @@ function App() {
               <FAQ
                 question="Como marcar uma consulta?"
                 answer="É simples! Basta clicar no botão de agendamento ou nos contatar via WhatsApp. Nossa equipe está pronta para atendê-lo e agendar sua avaliação gratuita."
-              />          
+              />
               <FAQ
                 question="Onde estamos localizados?"
                 answer="Estamos estrategicamente localizados no Shopping Mestre Álvaro: Av. João Palácio, 300, Centro Empresarial, Torre B – Salas 605/606, Serra – ES. Um ambiente sofisticado e de fácil acesso."
@@ -655,7 +656,7 @@ function App() {
               <FAQ
                 question="A clínica atende crianças?"
                 answer="Sim! Temos uma equipe especializada em odontopediatria, preparada para atender crianças de todas as idades em um ambiente acolhedor e divertido."
-              />              
+              />
               <FAQ
                 question="Quanto tempo dura uma consulta inicial?"
                 answer="Nossa consulta de avaliação dura aproximadamente 40 minutos, tempo suficiente para conhecermos suas necessidades, realizar um exame completo e elaborar um plano de tratamento personalizado."
@@ -693,7 +694,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <img
-                src="https://i.postimg.cc/d1H7grT9/Logo-Prancheta-1.png"
+                src="https://i.postimg.cc/50ZZj3m5/Log2.png"
                 alt="Excelence Odontologia Integrada"
                 className="h-16 mb-4"
               />
