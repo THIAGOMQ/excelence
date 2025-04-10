@@ -279,9 +279,9 @@ function App() {
 
           {/* Imagem para telas médias e maiores (oculta em telas menores que md) */}
           <img
-            src="https://i.postimg.cc/fbxNX1J2/Whats-App-Image-2025-03-12-at-14-47-22.jpg"
+            src="https://i.postimg.cc/0NqqkmvF/img-clinica-ex.jpg"
             alt="Consultório Odontológico"
-            className="w-full h-full object-cover object-[center_35%] opacity-80 hidden md:block"
+            className="w-full h-full object-cover object-[center_50%] opacity-80 hidden md:block"
           />
         </div>
 
