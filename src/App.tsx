@@ -306,8 +306,11 @@ function App() {
             </p>
           </motion.div>
 
-          <motion.button
-            className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden"
+          <motion.a
+            href="https://wa.me/5527996588600"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={pulseAnimation}
@@ -315,7 +318,7 @@ function App() {
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">AGENDAR CONSULTA</span>
-          </motion.button>
+          </motion.a>
 
           <motion.div
             className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
@@ -450,8 +453,11 @@ function App() {
             />
           </div>
 
-          <motion.button
-            className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
+          <motion.a
+            href="https://wa.me/5527996588600"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={pulseAnimation}
@@ -459,7 +465,7 @@ function App() {
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">AGENDE SUA AVALIAÇÃO</span>
-          </motion.button>
+          </motion.a>
         </div>
       </section>
 
@@ -612,8 +618,11 @@ function App() {
             )}
           </div>
 
-          <motion.button
-            className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
+          <motion.a
+            href="https://wa.me/5527996588600"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={pulseAnimation}
@@ -621,7 +630,7 @@ function App() {
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">TRANSFORME SEU SORRISO AGORA</span>
-          </motion.button>
+          </motion.a>
         </div>
       </section>
 
@@ -732,15 +741,18 @@ function App() {
                 (27) 99658-8600
               </motion.a>
 
-              <motion.button
-                className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full text-sm shadow-lg flex items-center gap-2 mt-4 group relative overflow-hidden"
+              <motion.a
+                href="https://wa.me/5527996588600"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full text-sm shadow-lg flex items-center gap-2 mt-4 group relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                 <FaCalendarAlt className="w-4 h-4" />
                 <span className="relative z-10">Agendar Consulta</span>
-              </motion.button>
+              </motion.a>
             </div>
           </div>
 
