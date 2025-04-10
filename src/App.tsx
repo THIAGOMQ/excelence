@@ -3,22 +3,19 @@ import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import {
-  Phone,
-  Calendar,
-  Star,
-  CheckCircle2,
-  MessageCircle,
-  Shield,
-  CreditCard,
-  Building2,
-  Sparkles,
-  Award,
-  Smile,
-  Bluetooth as Tooth,
-  Stethoscope,
-  Syringe,
-  Microscope,
-} from "lucide-react";
+  FaStar,
+  FaSmile,
+  FaCreditCard,
+  FaBuilding,
+  FaStethoscope,
+  FaSyringe,
+} from "react-icons/fa";
+
+import { GiTooth, GiToothbrush, GiPuzzle, GiScalpel } from "react-icons/gi";
+import { FaRegCommentDots } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const pulseAnimation = {
   scale: [1, 1.05, 1],
@@ -211,7 +208,7 @@ const TestimonialCard = ({
       transition={{ duration: 0.3 }}
     >
       <div className="absolute top-0 right-0 w-20 h-20 bg-primary-light/10 rounded-bl-full" />
-      <MessageCircle className="text-primary w-8 h-8 mb-4" />
+      <FaRegCommentDots className="text-primary w-8 h-8 mb-4" />
       <p className="text-gray-700 mb-6 relative z-10 leading-relaxed">
         "{text}"
       </p>
@@ -270,19 +267,30 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream-light to-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-16 overflow-hidden">
+        {/* Fundo com imagens diferentes para mobile e desktop */}
         <div className="absolute inset-0 z-0">
+          {/* Imagem para dispositivos móveis (visível apenas em telas menores que md) */}
+          <img
+            src="https://i.postimg.cc/yN3bwdwd/Whats-App-Image-2025-03-12-at-14-47-22-1.jpg"
+            alt="Consultório Odontológico (Mobile)"
+            className="w-full h-full object-cover object-[center_35%] opacity-80 block md:hidden"
+          />
+
+          {/* Imagem para telas médias e maiores (oculta em telas menores que md) */}
           <img
             src="https://i.postimg.cc/fbxNX1J2/Whats-App-Image-2025-03-12-at-14-47-22.jpg"
             alt="Consultório Odontológico"
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover object-[center_35%] opacity-80 hidden md:block"
           />
         </div>
 
+        {/* Sobreposição de gradiente no fundo */}
         <div className="absolute inset-0 bg-gradient-to-b from-cream-light/50 to-transparent z-0" />
 
+        {/* Conteúdo principal */}
         <motion.div
-          className="container mx-auto text-center z-10"
+          className="container mx-auto text-center z-10 mt-20 md:mt-32"
           initial={fadeIn.initial}
           animate={fadeIn.animate}
         >
@@ -291,14 +299,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img
-              src="https://i.postimg.cc/50ZZj3m5/Log2.png"
-              alt="Excelence Odontologia Integrada"
-              className="w-full max-w-[400px] md:max-w-[600px] lg:max-w-[800px] h-auto mx-auto mb-8 filter brightness-105"
-              style={{ filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15))" }}
-            />
-
-            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed py-4 px-6 rounded-lg">
               <strong>Transforme seu sorriso</strong> com tecnologia avançada e
               profissionais especializados em um{" "}
               <strong>ambiente acolhedor</strong> e sofisticado.
@@ -312,7 +313,7 @@ function App() {
             animate={pulseAnimation}
           >
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <Calendar className="w-5 h-5" />
+            <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">AGENDAR CONSULTA</span>
           </motion.button>
 
@@ -328,6 +329,7 @@ function App() {
           </motion.div>
         </motion.div>
 
+        {/* Gradiente de transição no rodapé da seção */}
         <motion.div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
       </section>
 
@@ -364,7 +366,7 @@ function App() {
                     backgroundColor: "rgba(210, 180, 128, 0.1)",
                   }}
                 >
-                  <CheckCircle2 className="text-primary flex-shrink-0 w-6 h-6" />
+                  <FaCheckCircle className="text-primary flex-shrink-0 w-6 h-6" />
                   <span className="text-gray-700">{item}</span>
                 </motion.div>
               ))}
@@ -407,42 +409,42 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ProcedureCard
-              icon={Stethoscope}
+              icon={FaStethoscope}
               title="Clínica Geral"
               description="Atendimento especializado para adultos e crianças"
             />
             <ProcedureCard
-              icon={Sparkles}
+              icon={GiTooth}
               title="Ortodontia"
               description="Invisalign e aparelhos convencionais"
             />
             <ProcedureCard
-              icon={Smile}
+              icon={FaSmile}
               title="Estética Dental"
               description="Facetas em resinas e restaurações estéticas"
             />
             <ProcedureCard
-              icon={Tooth}
+              icon={GiTooth}
               title="Prótese Dental"
               description="Protocolo, prótese total, parcial e unitária"
             />
             <ProcedureCard
-              icon={Microscope}
+              icon={GiToothbrush}
               title="Implante"
               description="Implantes dentários de última geração"
             />
             <ProcedureCard
-              icon={Syringe}
+              icon={FaSyringe}
               title="Endodontia"
               description="Tratamento de canal com tecnologia avançada"
             />
             <ProcedureCard
-              icon={Shield}
+              icon={GiPuzzle}
               title="Restaurações"
               description="Restaurações estéticas e funcionais"
             />
             <ProcedureCard
-              icon={Award}
+              icon={GiScalpel}
               title="Exodontia"
               description="Extrações com técnicas minimamente invasivas"
             />
@@ -455,7 +457,7 @@ function App() {
             animate={pulseAnimation}
           >
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <Calendar className="w-5 h-5" />
+            <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">AGENDE SUA AVALIAÇÃO</span>
           </motion.button>
         </div>
@@ -483,32 +485,32 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Benefits
-              icon={Star}
+              icon={FaStar}
               title="Atendimento Especializado"
               description="Profissionais altamente qualificados para cuidar de adultos e crianças com toda atenção necessária."
             />
             <Benefits
-              icon={Sparkles}
+              icon={GiTooth}
               title="Ortodontia Moderna"
               description="Tecnologias avançadas como Invisalign e aparelhos autoligados para resultados superiores."
             />
             <Benefits
-              icon={Smile}
+              icon={FaSmile}
               title="Estética Dental"
               description="Procedimentos estéticos personalizados para um sorriso natural e harmonioso."
             />
             <Benefits
-              icon={Tooth}
+              icon={GiToothbrush}
               title="Implantes Avançados"
               description="Técnicas minimamente invasivas e planejamento digital para máxima precisão."
             />
             <Benefits
-              icon={Building2}
+              icon={FaBuilding}
               title="Ambiente Premium"
               description="Consultório moderno com equipamentos de última geração em localização privilegiada."
             />
             <Benefits
-              icon={CreditCard}
+              icon={FaCreditCard}
               title="Facilidade de Pagamento"
               description="Diversas opções de pagamento e parcelamento para seu conforto financeiro."
             />
@@ -617,7 +619,7 @@ function App() {
             animate={pulseAnimation}
           >
             <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <Calendar className="w-5 h-5" />
+            <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">TRANSFORME SEU SORRISO AGORA</span>
           </motion.button>
         </div>
@@ -726,7 +728,7 @@ function App() {
                 className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity"
                 whileHover={{ scale: 1.05 }}
               >
-                <Phone className="w-4 h-4" />
+                <FaPhoneAlt className="w-4 h-4" />
                 (27) 99658-8600
               </motion.a>
 
@@ -736,7 +738,7 @@ function App() {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                <Calendar className="w-4 h-4" />
+                <FaCalendarAlt className="w-4 h-4" />
                 <span className="relative z-10">Agendar Consulta</span>
               </motion.button>
             </div>
