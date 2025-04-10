@@ -79,7 +79,7 @@ const Statistic = ({ number, label }: { number: string; label: string }) => (
     transition={{ duration: 0.5 }}
   >
     <div className="text-4xl font-bold text-gray-700 mb-2">{number}</div>
-    <div className="text-sm text-gray-600">{label}</div>
+    <div className="text-sm font-bold text-gray-600">{label}</div>
   </motion.div>
 );
 
@@ -273,9 +273,9 @@ function App() {
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://img.freepik.com/free-photo/female-patient-having-procedure-done-dentist_23-2148985796.jpg?t=st=1744046435~exp=1744050035~hmac=62e846426e3d8cf44c8d003e9b2cc51e192c9c6f24c4ecf052593ed34c8328a6&w=996"
+            src="https://i.postimg.cc/fbxNX1J2/Whats-App-Image-2025-03-12-at-14-47-22.jpg"
             alt="Consultório Odontológico"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-80"
           />
         </div>
 
