@@ -3,18 +3,14 @@ import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import {
-  FaStar,
-  FaSmile,
   FaCreditCard,
   FaBuilding,
   FaRegCommentDots,
   FaCalendarAlt,
   FaCheckCircle,
 } from "react-icons/fa";
-import { GiTooth, GiToothbrush } from "react-icons/gi";
 import { IconType } from "react-icons";
 
-// Import SVG icons with correct filenames
 import ortodontiaIcon from "./icons/Ortodontia.svg";
 import clinicaGeralIcon from "./icons/ClinicaGeral.svg";
 import endodontiaIcon from "./icons/Endodontia.svg";
@@ -23,6 +19,11 @@ import exodontiaIcon from "./icons/Exodontia.svg";
 import implanteIcon from "./icons/Implante.svg";
 import proteseDentalIcon from "./icons/proteseDental.svg";
 import restauracoesIcon from "./icons/Restauracoes.svg";
+
+import atendimentoHumanizadoIcon from "./icons/AtendimentoHumanizado.svg";
+import ortodontiaModernaIcon from "./icons/OrtodontiaModerna.svg";
+import esteticaDental2Icon from "./icons/EsteticaDental2.svg";
+import implantesAvancadosIcon from "./icons/ImplantesAvancados.svg";
 
 const pulseAnimation = {
   scale: [1, 1.05, 1],
@@ -63,7 +64,7 @@ const Benefits = ({ icon: Icon, title, description }: BenefitsProps) => (
       whileHover={{ rotate: [0, 10, -10, 0] }}
       transition={{ duration: 0.5 }}
     >
-      <Icon className="text-primary w-8 h-8" />
+      <Icon className="text-primary w-16 h-16" />
     </motion.div>
     <div>
       <h3 className="font-semibold text-lg text-primary-dark mb-2">{title}</h3>
@@ -240,86 +241,53 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream-light to-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-screen flex items-start justify-center px-4 pt-0 md:pt-6 pb-10 overflow-hidden">
+      <section className="relative h-[90vh] md:h-screen flex flex-col items-start justify-between px-4 overflow-hidden">
         {/* Fundo com imagens diferentes para mobile e desktop */}
         <div className="absolute inset-0 z-0">
           {/* Imagem para dispositivos móveis (visível apenas em telas menores que md) */}
           <img
-            src="https://i.postimg.cc/mDLkGdHv/fundomobi.jpg"
+            src="https://i.postimg.cc/dQXmdK81/Whats-App-Image-2025-04-25-at-10-55-04.jpg"
             alt="Consultório Odontológico (Mobile)"
-            className="w-full h-full object-cover object-[center_25%] opacity-80 block md:hidden"
+            className="w-full h-full object-cover object-center opacity-80 block md:hidden"
           />
 
           {/* Imagem para telas médias e maiores (oculta em telas menores que md) */}
           <img
-            src="https://i.postimg.cc/x8NPDRYg/fundo.jpg"
+            src="https://i.postimg.cc/d06SKtL6/TESTEF.png"
             alt="Consultório Odontológico"
-            className="w-full h-full object-cover object-[center_50%] opacity-80 hidden md:block"
+            className="w-full h-full object-cover object-center opacity-90 hidden md:block"
           />
         </div>
 
-        {/* Sobreposição de gradiente no fundo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cream-light/50 to-transparent z-0" />
-
         {/* Conteúdo principal */}
-        <motion.div
-          className="container mx-auto text-center z-20 mt-16 md:mt-24"
-          initial={fadeIn.initial}
-          animate={fadeIn.animate}
-        >
-          {/* Logo */}
-          <motion.img
-            src="https://i.postimg.cc/1XdLNY2D/Log2.png"
-            alt="Excelence Odontologia Integrada Logo"
-            className="w-[340px] sm:w-[400px] md:w-[500px] lg:w-[650px] xl:w-[800px] 2xl:w-[950px] h-auto mx-auto mb-2 md:mb-0 drop-shadow-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          />
-
+        <div className="container mx-auto flex flex-col justify-between h-full w-full z-20">
+          {/* Container para logo e texto (se houver) - ficará no topo */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-4 md:mb-6"
+            className="mb-4 md:mb-6 mt-16 md:mt-16 text-center"
           >
-            <div className="relative max-w-3xl mx-auto">
-              {/* Camada de efeito blur com degradê */}
-              <div
-                className="absolute inset-0 z-0 rounded-lg"
-                style={{
-                  background: "rgba(255, 255, 255, 0.4)",
-                  backdropFilter: "blur(4px)",
-                  maskImage:
-                    "radial-gradient(ellipse at center, black 30%, transparent 70%)",
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse at center, black 30%, transparent 70%)",
-                }}
-              ></div>
-
-              {/* Texto */}
-              <p className="text-lg md:text-2xl text-gray-800 relative z-10 leading-relaxed py-2 px-4 md:py-3 md:px-5 rounded-lg">
-                <strong>Transforme seu sorriso</strong> com tecnologia avançada
-                e profissionais especializados em um{" "}
-                <strong>ambiente acolhedor</strong> e sofisticado.
-              </p>
-            </div>
+            {/* Removi a div com o efeito blur */}
           </motion.div>
 
-          <motion.a
-            href="https://wa.me/5527996588600"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden z-50"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={pulseAnimation}
-          >
-            <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <FaCalendarAlt className="w-5 h-5" />
-            <span className="relative z-10">AGENDAR CONSULTA</span>
-          </motion.a>
-        </motion.div>
+          {/* Container para o botão - ajustado para ficar mais acima */}
+          <div className="mb-48 md:mb-36 text-center w-full">
+            <motion.a
+              href="https://wa.me/5527996588600"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 md:py-6 md:px-12 rounded-full text-xl md:text-2xl shadow-lg flex items-center gap-3 mx-auto group relative overflow-hidden z-50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={pulseAnimation}
+            >
+              <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+              <FaCalendarAlt className="w-6 h-6 md:w-7 md:h-7" />
+              <span className="relative z-10">AGENDAR CONSULTA</span>
+            </motion.a>
+          </div>
+        </div>
 
         {/* Gradiente de transição no rodapé da seção */}
         <motion.div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-10" />
@@ -335,10 +303,11 @@ function App() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-primary-dark mb-6">
-              Nossa Clínica Atende Quem
+              Nossa Clínica Atende Quem:
             </h2>
             <p className="text-gray-600 text-lg">
-              Conheça os casos que solucionamos com excelência e dedicação
+              Busca excelência, cuidado e resultados que transformam, aqui é o
+              seu lugar.{" "}
             </p>
           </motion.div>
 
@@ -412,7 +381,7 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="p-1 rounded-xl w-fit mb-1 mx-auto">
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-1 mx-auto">
                 <img
                   src={ortodontiaIcon}
                   alt="Ortodontia"
@@ -439,7 +408,7 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="p-1 rounded-xl w-fit mb-5 mx-auto">
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-5 mx-auto">
                 <img
                   src={clinicaGeralIcon}
                   alt="Clínica Geral"
@@ -466,7 +435,7 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="p-1 rounded-xl w-fit mb-4 mx-auto">
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
                 <img
                   src={endodontiaIcon}
                   alt="Endodontia"
@@ -493,7 +462,7 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="p-1 rounded-xl w-fit mb-4 mx-auto">
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
                 {" "}
                 <img
                   src={esteticaDentalIcon}
@@ -663,31 +632,119 @@ function App() {
             transition={{ delay: 0.4 }}
           >
             <Statistic number="30+" label="Anos de Experiência" />
-            <Statistic number="10k+" label="Pacientes Atendidos" />
+            <Statistic number="8k+" label="Pacientes Atendidos" />
             <Statistic number="98%" label="Satisfação" />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Benefits
-              icon={FaStar}
-              title="Atendimento Especializado"
-              description="Profissionais altamente qualificados para cuidar de adultos e crianças com toda atenção necessária."
-            />
-            <Benefits
-              icon={GiTooth}
-              title="Ortodontia Moderna"
-              description="Tecnologias avançadas como Invisalign e aparelhos autoligados para resultados superiores."
-            />
-            <Benefits
-              icon={FaSmile}
-              title="Estética Dental"
-              description="Procedimentos estéticos personalizados para um sorriso natural e harmonioso."
-            />
-            <Benefits
-              icon={GiToothbrush}
-              title="Implantes Avançados"
-              description="Técnicas minimamente invasivas e planejamento digital para máxima precisão."
-            />
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src={atendimentoHumanizadoIcon}
+                  alt="Atendimento Especializado"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Atendimento Especializado
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Profissionais altamente qualificados para cuidar de adultos e
+                crianças com toda atenção necessária.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src={ortodontiaModernaIcon}
+                  alt="Ortodontia Moderna"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Ortodontia Moderna
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Tecnologias avançadas como Invisalign e aparelhos autoligados
+                para resultados superiores.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src={esteticaDental2Icon}
+                  alt="Estética Dental"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Estética Dental
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Procedimentos estéticos personalizados para um sorriso natural e
+                harmonioso.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-1 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src={implantesAvancadosIcon}
+                  alt="Implantes Avançados"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Implantes Avançados
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Técnicas minimamente invasivas e planejamento digital para
+                máxima precisão.
+              </p>
+            </motion.div>
+
             <Benefits
               icon={FaBuilding}
               title="Ambiente Premium"
