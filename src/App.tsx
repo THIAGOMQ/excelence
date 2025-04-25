@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
@@ -15,6 +13,17 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { GiTooth, GiToothbrush } from "react-icons/gi";
+import { IconType } from "react-icons";
+
+// Import SVG icons with correct filenames
+import ortodontiaIcon from "./icons/Ortodontia.svg";
+import clinicaGeralIcon from "./icons/ClinicaGeral.svg";
+import endodontiaIcon from "./icons/Endodontia.svg";
+import esteticaDentalIcon from "./icons/esteticaDental.svg";
+import exodontiaIcon from "./icons/Exodontia.svg";
+import implanteIcon from "./icons/Implante.svg";
+import proteseDentalIcon from "./icons/proteseDental.svg";
+import restauracoesIcon from "./icons/Restauracoes.svg";
 
 const pulseAnimation = {
   scale: [1, 1.05, 1],
@@ -31,15 +40,13 @@ const fadeIn = {
   transition: { duration: 0.6 },
 };
 
-const Benefits = ({
-  icon: Icon,
-  title,
-  description,
-}: {
-  icon: any;
+interface BenefitsProps {
+  icon: IconType;
   title: string;
   description: string;
-}) => (
+}
+
+const Benefits = ({ icon: Icon, title, description }: BenefitsProps) => (
   <motion.div
     className="flex flex-col items-center gap-4 bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
     whileHover={{
@@ -377,7 +384,7 @@ function App() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {/* Ortodontia */}
             <motion.div
               className="bg-white p-6 rounded-2xl shadow-lg text-center"
@@ -392,7 +399,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/icons/Ortodontia.svg"
+                  src={ortodontiaIcon}
                   alt="Ortodontia"
                   className="w-8 h-8 object-contain"
                 />
@@ -419,7 +426,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={clinicaGeralIcon}
                   alt="Clínica Geral"
                   className="w-8 h-8 object-contain"
                 />
@@ -446,7 +453,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={endodontiaIcon}
                   alt="Endodontia"
                   className="w-8 h-8 object-contain"
                 />
@@ -473,7 +480,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={esteticaDentalIcon}
                   alt="Estética Dental"
                   className="w-8 h-8 object-contain"
                 />
@@ -500,7 +507,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={exodontiaIcon}
                   alt="Exodontia"
                   className="w-8 h-8 object-contain"
                 />
@@ -527,7 +534,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={implanteIcon}
                   alt="Implante"
                   className="w-8 h-8 object-contain"
                 />
@@ -554,7 +561,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={proteseDentalIcon}
                   alt="Prótese Dental"
                   className="w-8 h-8 object-contain"
                 />
@@ -581,7 +588,7 @@ function App() {
             >
               <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
                 <img
-                  src="/placeholder.svg?height=32&width=32"
+                  src={restauracoesIcon}
                   alt="Restaurações"
                   className="w-8 h-8 object-contain"
                 />
@@ -595,19 +602,21 @@ function App() {
             </motion.div>
           </div>
 
-          <motion.a
-            href="https://wa.me/5527996588600"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={pulseAnimation}
-          >
-            <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <FaCalendarAlt className="w-5 h-5" />
-            <span className="relative z-10">AGENDE SUA AVALIAÇÃO</span>
-          </motion.a>
+          <div className="flex justify-center mt-12">
+            <motion.a
+              href="https://wa.me/5527996588600"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={pulseAnimation}
+            >
+              <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+              <FaCalendarAlt className="w-5 h-5" />
+              <span className="relative z-10">AGENDE SUA AVALIAÇÃO</span>
+            </motion.a>
+          </div>
         </div>
       </section>
 
@@ -771,19 +780,23 @@ function App() {
             )}
           </div>
 
-          <motion.a
-            href="https://wa.me/5527996588600"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto mt-12 group relative overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={pulseAnimation}
-          >
-            <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            <FaCalendarAlt className="w-5 h-5" />
-            <span className="relative z-10">TRANSFORME SEU SORRISO AGORA</span>
-          </motion.a>
+          <div className="flex justify-center mt-12">
+            <motion.a
+              href="https://wa.me/5527996588600"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={pulseAnimation}
+            >
+              <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+              <FaCalendarAlt className="w-5 h-5" />
+              <span className="relative z-10">
+                TRANSFORME SEU SORRISO AGORA
+              </span>
+            </motion.a>
+          </div>
         </div>
       </section>
 
