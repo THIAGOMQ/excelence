@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
@@ -7,21 +9,18 @@ import {
   FaSmile,
   FaCreditCard,
   FaBuilding,
-  FaStethoscope,
-  FaSyringe,
+  FaRegCommentDots,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaPhoneAlt,
 } from "react-icons/fa";
-
-import { GiTooth, GiToothbrush, GiPuzzle, GiScalpel } from "react-icons/gi";
-import { FaRegCommentDots } from "react-icons/fa";
-import { FaCalendarAlt } from "react-icons/fa";
-import { FaCheckCircle } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
+import { GiTooth, GiToothbrush } from "react-icons/gi";
 
 const pulseAnimation = {
   scale: [1, 1.05, 1],
   transition: {
     duration: 2,
-    repeat: Infinity,
+    repeat: Number.POSITIVE_INFINITY,
     ease: "easeInOut",
   },
 };
@@ -75,40 +74,8 @@ const Statistic = ({ number, label }: { number: string; label: string }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
   >
-    <div className="text-4xl font-bold text-gray-700 mb-2">{number}</div>
-    <div className="text-sm font-bold text-gray-600">{label}</div>
-  </motion.div>
-);
-
-const ProcedureCard = ({
-  icon: Icon,
-  title,
-  description,
-}: {
-  icon: any;
-  title: string;
-  description: string;
-}) => (
-  <motion.div
-    className="bg-white p-6 rounded-2xl shadow-lg text-center"
-    whileHover={{
-      scale: 1.02,
-      backgroundColor: "rgba(210, 180, 128, 0.1)",
-      transition: { duration: 0.2 },
-    }}
-    initial={fadeIn.initial}
-    animate={fadeIn.animate}
-    viewport={{ once: true }}
-  >
-    <motion.div
-      className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto"
-      whileHover={{ rotate: [0, 10, -10, 0] }}
-      transition={{ duration: 0.5 }}
-    >
-      <Icon className="text-primary w-6 h-6" />
-    </motion.div>
-    <h3 className="font-semibold text-lg text-primary-dark mb-2">{title}</h3>
-    <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+    <div className="text-4xl font-bold text-gray-800 mb-2">{number}</div>
+    <div className="text-sm font-bold text-gray-800">{label}</div>
   </motion.div>
 );
 
@@ -214,7 +181,7 @@ const TestimonialCard = ({
       </p>
       <div className="flex items-center gap-3 mt-auto">
         <img
-          src={image}
+          src={image || "/placeholder.svg"}
           alt={author}
           className="w-12 h-12 rounded-full object-cover"
         />
@@ -267,19 +234,19 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream-light to-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-16 overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-screen flex items-start justify-center px-4 pt-0 md:pt-6 pb-10 overflow-hidden">
         {/* Fundo com imagens diferentes para mobile e desktop */}
         <div className="absolute inset-0 z-0">
           {/* Imagem para dispositivos móveis (visível apenas em telas menores que md) */}
           <img
-            src="https://i.postimg.cc/yN3bwdwd/Whats-App-Image-2025-03-12-at-14-47-22-1.jpg"
+            src="https://i.postimg.cc/mDLkGdHv/fundomobi.jpg"
             alt="Consultório Odontológico (Mobile)"
-            className="w-full h-full object-cover object-[center_35%] opacity-80 block md:hidden"
+            className="w-full h-full object-cover object-[center_25%] opacity-80 block md:hidden"
           />
 
           {/* Imagem para telas médias e maiores (oculta em telas menores que md) */}
           <img
-            src="https://i.postimg.cc/0NqqkmvF/img-clinica-ex.jpg"
+            src="https://i.postimg.cc/x8NPDRYg/fundo.jpg"
             alt="Consultório Odontológico"
             className="w-full h-full object-cover object-[center_50%] opacity-80 hidden md:block"
           />
@@ -290,16 +257,27 @@ function App() {
 
         {/* Conteúdo principal */}
         <motion.div
-          className="container mx-auto text-center z-10 mt-20 md:mt-32"
+          className="container mx-auto text-center z-20 mt-16 md:mt-24"
           initial={fadeIn.initial}
           animate={fadeIn.animate}
         >
+          {/* Logo */}
+          <motion.img
+            src="https://i.postimg.cc/1XdLNY2D/Log2.png"
+            alt="Excelence Odontologia Integrada Logo"
+            className="w-72 sm:w-80 md:w-[600px] lg:w-[800px] xl:w-[1000px] 2xl:w-[1200px] h-auto mx-auto mb-2 md:mb-0 drop-shadow-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          />
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-4 md:mb-6"
           >
-            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed py-4 px-6 rounded-lg">
+            <p className="text-lg md:text-2xl text-gray-800 mb-4 max-w-3xl mx-auto leading-relaxed py-2 px-4 md:py-3 md:px-5 rounded-lg">
               <strong>Transforme seu sorriso</strong> com tecnologia avançada e
               profissionais especializados em um{" "}
               <strong>ambiente acolhedor</strong> e sofisticado.
@@ -310,7 +288,7 @@ function App() {
             href="https://wa.me/5527996588600"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden"
+            className="w-fit bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg flex items-center gap-2 mx-auto group relative overflow-hidden z-50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={pulseAnimation}
@@ -319,25 +297,14 @@ function App() {
             <FaCalendarAlt className="w-5 h-5" />
             <span className="relative z-10">AGENDAR CONSULTA</span>
           </motion.a>
-
-          <motion.div
-            className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <Statistic number="30+" label="Anos de Experiência" />
-            <Statistic number="10k+" label="Pacientes Atendidos" />
-            <Statistic number="98%" label="Satisfação" />
-          </motion.div>
         </motion.div>
 
         {/* Gradiente de transição no rodapé da seção */}
-        <motion.div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
+        <motion.div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-10" />
       </section>
 
       {/* Problem Section */}
-      <section className="py-16 bg-white">
+      <section className="py-6 md:py-12 bg-white relative z-20">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center max-w-3xl mx-auto mb-12"
@@ -411,46 +378,221 @@ function App() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ProcedureCard
-              icon={FaStethoscope}
-              title="Clínica Geral"
-              description="Atendimento especializado para adultos e crianças"
-            />
-            <ProcedureCard
-              icon={GiTooth}
-              title="Ortodontia"
-              description="Invisalign e aparelhos convencionais"
-            />
-            <ProcedureCard
-              icon={FaSmile}
-              title="Estética Dental"
-              description="Facetas em resinas e restaurações estéticas"
-            />
-            <ProcedureCard
-              icon={GiTooth}
-              title="Prótese Dental"
-              description="Protocolo, prótese total, parcial e unitária"
-            />
-            <ProcedureCard
-              icon={GiToothbrush}
-              title="Implante"
-              description="Implantes dentários de última geração"
-            />
-            <ProcedureCard
-              icon={FaSyringe}
-              title="Endodontia"
-              description="Tratamento de canal com tecnologia avançada"
-            />
-            <ProcedureCard
-              icon={GiPuzzle}
-              title="Restaurações"
-              description="Restaurações estéticas e funcionais"
-            />
-            <ProcedureCard
-              icon={GiScalpel}
-              title="Exodontia"
-              description="Extrações com técnicas minimamente invasivas"
-            />
+            {/* Ortodontia */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/icons/Ortodontia.svg"
+                  alt="Ortodontia"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Ortodontia
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Invisalign e aparelhos convencionais
+              </p>
+            </motion.div>
+
+            {/* Clínica Geral */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Clínica Geral"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Clínica Geral
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Atendimento especializado para adultos e crianças
+              </p>
+            </motion.div>
+
+            {/* Endodontia */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Endodontia"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Endodontia
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Tratamento de canal com tecnologia avançada
+              </p>
+            </motion.div>
+
+            {/* Estética Dental */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Estética Dental"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Estética Dental
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Facetas em resinas e restaurações estéticas
+              </p>
+            </motion.div>
+
+            {/* Exodontia */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Exodontia"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Exodontia
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Extrações com técnicas minimamente invasivas
+              </p>
+            </motion.div>
+
+            {/* Implante */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Implante"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Implante
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Implantes dentários de última geração
+              </p>
+            </motion.div>
+
+            {/* Prótese Dental */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Prótese Dental"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Prótese Dental
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Protocolo, prótese total, parcial e unitária
+              </p>
+            </motion.div>
+
+            {/* Restaurações */}
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "rgba(210, 180, 128, 0.1)",
+                transition: { duration: 0.2 },
+              }}
+              initial={fadeIn.initial}
+              animate={fadeIn.animate}
+              viewport={{ once: true }}
+            >
+              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+                <img
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Restaurações"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-primary-dark mb-2">
+                Restaurações
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Restaurações estéticas e funcionais
+              </p>
+            </motion.div>
           </div>
 
           <motion.a
@@ -487,6 +629,17 @@ function App() {
               Oferecemos uma experiência única em odontologia, combinando
               expertise, tecnologia e conforto.
             </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-3 gap-8 max-w-3xl mx-auto my-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Statistic number="30+" label="Anos de Experiência" />
+            <Statistic number="10k+" label="Pacientes Atendidos" />
+            <Statistic number="98%" label="Satisfação" />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -662,7 +815,7 @@ function App() {
               />
               <FAQ
                 question="Onde estamos localizados?"
-                answer="Estamos estrategicamente localizados no Shopping Mestre Álvaro: Av. João Palácio, 300, Centro Empresarial, Torre B – Salas 605/606, Serra – ES. Um ambiente sofisticado e de fácil acesso."
+                answer="Estamos estrategicamente localizados no Shopping Mestre Álvaro: Av. João Palácio, 300, Centro Empresarial, Torre B – Salas 605/606, CEP: 29160-161, Serra – ES. Um ambiente sofisticado e de fácil acesso."
               />
               <FAQ
                 question="A clínica atende crianças?"
@@ -726,7 +879,7 @@ function App() {
                 <br />
                 Eurico Salles | Serra | ES
                 <br />
-                CEP: 29160-169
+                CEP: 29160-161
               </address>
             </div>
 
