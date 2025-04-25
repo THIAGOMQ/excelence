@@ -10,7 +10,6 @@ import {
   FaRegCommentDots,
   FaCalendarAlt,
   FaCheckCircle,
-  FaPhoneAlt,
 } from "react-icons/fa";
 import { GiTooth, GiToothbrush } from "react-icons/gi";
 import { IconType } from "react-icons";
@@ -81,8 +80,8 @@ const Statistic = ({ number, label }: { number: string; label: string }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
   >
-    <div className="text-4xl font-bold text-gray-800 mb-2">{number}</div>
-    <div className="text-sm font-bold text-gray-800">{label}</div>
+    <div className="text-4xl font-bold text-gray-600 mb-2">{number}</div>
+    <div className="text-sm font-bold text-gray-600">{label}</div>
   </motion.div>
 );
 
@@ -272,7 +271,7 @@ function App() {
           <motion.img
             src="https://i.postimg.cc/1XdLNY2D/Log2.png"
             alt="Excelence Odontologia Integrada Logo"
-            className="w-72 sm:w-80 md:w-[600px] lg:w-[800px] xl:w-[1000px] 2xl:w-[1200px] h-auto mx-auto mb-2 md:mb-0 drop-shadow-xl"
+            className="w-[340px] sm:w-[400px] md:w-[500px] lg:w-[650px] xl:w-[800px] 2xl:w-[950px] h-auto mx-auto mb-2 md:mb-0 drop-shadow-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -284,11 +283,27 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-4 md:mb-6"
           >
-            <p className="text-lg md:text-2xl text-gray-800 mb-4 max-w-3xl mx-auto leading-relaxed py-2 px-4 md:py-3 md:px-5 rounded-lg">
-              <strong>Transforme seu sorriso</strong> com tecnologia avançada e
-              profissionais especializados em um{" "}
-              <strong>ambiente acolhedor</strong> e sofisticado.
-            </p>
+            <div className="relative max-w-3xl mx-auto">
+              {/* Camada de efeito blur com degradê */}
+              <div
+                className="absolute inset-0 z-0 rounded-lg"
+                style={{
+                  background: "rgba(255, 255, 255, 0.4)",
+                  backdropFilter: "blur(4px)",
+                  maskImage:
+                    "radial-gradient(ellipse at center, black 30%, transparent 70%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse at center, black 30%, transparent 70%)",
+                }}
+              ></div>
+
+              {/* Texto */}
+              <p className="text-lg md:text-2xl text-gray-800 relative z-10 leading-relaxed py-2 px-4 md:py-3 md:px-5 rounded-lg">
+                <strong>Transforme seu sorriso</strong> com tecnologia avançada
+                e profissionais especializados em um{" "}
+                <strong>ambiente acolhedor</strong> e sofisticado.
+              </p>
+            </div>
           </motion.div>
 
           <motion.a
@@ -397,11 +412,11 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+              <div className="p-1 rounded-xl w-fit mb-1 mx-auto">
                 <img
                   src={ortodontiaIcon}
                   alt="Ortodontia"
-                  className="w-8 h-8 object-contain"
+                  className="w-24 h-24 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -424,11 +439,11 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+              <div className="p-1 rounded-xl w-fit mb-5 mx-auto">
                 <img
                   src={clinicaGeralIcon}
                   alt="Clínica Geral"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -451,11 +466,11 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+              <div className="p-1 rounded-xl w-fit mb-4 mx-auto">
                 <img
                   src={endodontiaIcon}
                   alt="Endodontia"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -478,11 +493,12 @@ function App() {
               animate={fadeIn.animate}
               viewport={{ once: true }}
             >
-              <div className="bg-primary-light/10 p-3 rounded-xl w-fit mb-4 mx-auto">
+              <div className="p-1 rounded-xl w-fit mb-4 mx-auto">
+                {" "}
                 <img
                   src={esteticaDentalIcon}
                   alt="Estética Dental"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -509,7 +525,7 @@ function App() {
                 <img
                   src={exodontiaIcon}
                   alt="Exodontia"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -536,7 +552,7 @@ function App() {
                 <img
                   src={implanteIcon}
                   alt="Implante"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -563,7 +579,7 @@ function App() {
                 <img
                   src={proteseDentalIcon}
                   alt="Prótese Dental"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -590,7 +606,7 @@ function App() {
                 <img
                   src={restauracoesIcon}
                   alt="Restaurações"
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
               <h3 className="font-semibold text-lg text-primary-dark mb-2">
@@ -866,24 +882,24 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary-dark text-white py-10">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
+      <footer className="bg-amber-700 text-white py-10 w-full">
+        <div className="container mx-auto px-4 w-full">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start">
               <img
                 src="https://i.postimg.cc/50ZZj3m5/Log2.png"
                 alt="Excelence Odontologia Integrada"
                 className="h-16 mb-4"
               />
-              <p className="text-sm opacity-80">
+              <p className="text-sm opacity-80 max-w-xs">
                 Transformando sorrisos e vidas com excelência e tecnologia de
                 ponta.
               </p>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <h3 className="font-semibold text-lg mb-4">Endereço</h3>
-              <address className="not-italic text-sm opacity-80">
+              <address className="not-italic text-sm opacity-80 text-center md:text-left">
                 Av. João Palácio, 300
                 <br />
                 Centro Empresarial do Shopping Mestre Álvaro
@@ -896,29 +912,43 @@ function App() {
               </address>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <h3 className="font-semibold text-lg mb-4">Contato</h3>
-              <motion.a
+              <a
                 href="tel:+5527996588600"
-                className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity"
-                whileHover={{ scale: 1.05 }}
+                className="flex items-center justify-center md:justify-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity"
               >
-                <FaPhoneAlt className="w-4 h-4" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"
+                  />
+                </svg>
                 (27) 99658-8600
-              </motion.a>
+              </a>
 
-              <motion.a
+              <a
                 href="https://wa.me/5527996588600"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full text-sm shadow-lg flex items-center gap-2 mt-4 group relative overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full text-sm shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
               >
-                <span className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                <FaCalendarAlt className="w-4 h-4" />
-                <span className="relative z-10">Agendar Consulta</span>
-              </motion.a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm64-192c0-8.8 7.2-16 16-16h288c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-64zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+                  />
+                </svg>
+                <span>Agendar Consulta</span>
+              </a>
             </div>
           </div>
 
