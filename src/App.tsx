@@ -882,7 +882,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-700 text-white py-10 w-full">
+      <footer className="bg-primary-dark text-white py-10 w-full">
         <div className="container mx-auto px-4 w-full">
           <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="flex flex-col items-center md:items-start">
